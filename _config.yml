@@ -1,1 +1,8 @@
+# baisc options
+Title: Learning something new
+author: Nanologist
+description: Try out something 
+
+# Build settings
+markdown: kramdown
 theme: jekyll-theme-minimal
