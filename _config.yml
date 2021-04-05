@@ -1,7 +1,10 @@
 # baisc options
 Title: Learning-something-new
 author: Nanologist
+email: testtest@test.com
 description: Welcome to Nanological site 
+twitter_username: testtest
+github_username: nanologisk
 
 # Build settings
 remote_theme: jekyll/minima
