@@ -4,4 +4,4 @@ author: Nanologist
 description: Try out something 
 
 # Build settings
-theme: jekyll-theme-minimal
+remote_theme: jekyll/minima
