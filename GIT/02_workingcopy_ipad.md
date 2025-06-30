@@ -29,3 +29,11 @@ This is pretty straight forward.
     * Add a short message
 - Then tap "**Push**".
 
+There are several options here in Working copy:
+- pull: It downloads the remote changes and automatically merges them into the current branch, the working files. 
+    * `git fetch` + `git merge` = `git pull`
+- push
+- fetch: `git fetch`: dowloads the latest changes from the remote repository but it does **not** merge them into local files
+- settings
+
+ 
