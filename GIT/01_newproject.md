@@ -100,17 +100,47 @@ Permissions:
 
 **Save the tolken at once or it will be gone...**
 
-4. To avoid entering the token everytime, cache it:
+6. To avoid entering the token everytime, cache it:
 ```bash
 git config --global credential.helper store
 ```
 
-5. Push and paste the tolken. Git will remember it for future pushese
+7. Push and paste the tolken. Git will remember it for future pushese
 ```bash
 git push 
 ```
 paste - done!
 
 
+## 5. Get the latest changes on the PC
+
+Direct to local repo folder
+```bash
+cd ~/Projects/thisporject
+```
+
+Then run
+```bash 
+git pull
+```
+This will download and merge changes from GitHub into local files.
 
 
+------------------
+
+## Summarise:
+
+```bash
+# pull latest changes 
+git pull
+
+# make changes
+
+# commit changes
+git add.
+git commit -m "comment"
+
+# push commit to Github
+git push 
+
+```
