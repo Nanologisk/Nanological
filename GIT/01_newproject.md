@@ -39,7 +39,7 @@ Create new markdown file
 echo "# Python Notes" > Python/README.md
 echo "# Linux Notes" > Linux/README.md
 echo "# Nvim Notes" > Linux/README.md
-ech "# Statistics Notes" > Statistics/README.md
+echo "# Statistics Notes" > Statistics/README.md
 ```
 
 Copy over some old files
