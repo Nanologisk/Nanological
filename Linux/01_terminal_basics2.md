@@ -116,23 +116,14 @@ $ ls -l
 
 ```
 pete@icebox:~$ ls -l
-
 total 80
-
 drwxr-x— 7 pete penguingroup   4096 Nov 20 16:37 Desktop
-
 drwxr-x— 2 pete penguingroup   4096 Oct 19 10:46  Documents
-
 drwxr-x— 4 pete penguingroup   4096 Nov 20 09:30 Downloads
-
 drwxr-x— 2 pete penguingroup   4096 Oct  7 13:13   Music
-
 drwxr-x— 2 pete penguingroup   4096 Sep 21 14:02 Pictures
-
 drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Public
-
 drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Templates
-
 drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Videos
 ```
 
@@ -201,7 +192,7 @@ Use the following command to navigate through less:
 ## 9. history
 In your shell, there is a history of the commands that you previously entered, you can actually look through these commands. This is quite useful when you want to find and run a command you used previously without actually typing it again.
 
-```
+```bash
 $ history
 ```
 
@@ -214,20 +205,47 @@ Another history shortcut is `ctrl-R`, this is the reverse search command, if you
 Our terminal is getting a little cluttered no? Let’s do a little cleanup, use the clear command to clear up your display.
 
 
-```
+```bash
 $ clear
 ```
 
 One of the most useful features in any command-line environment is **tab completion**. If you start typing the beginning of a command, file, directory, etc and hit the Tab key, it will autocomplete based on what it finds in the directory you are searching as long as you don’t have any other files that start with those letters. For example if you were trying to run the command chrome, you can type chr and press Tab and it will autocomplete chrome.
 
 
+## 10. cp (Copy)
+Let’s start making some copies of these files. Much like copy and pasting files in other operating systems, the shell gives us an even simpler way of doing that.
 
+```bash
+$ cp mycoolfile /home/pete/Documents/cooldocs
+```
 
+mycoolfile is the file you want to copy and `/home/pete/Documents/cooldocs` is where you are copying the file to.
 
+You can copy multiple files and directories as well as use *wildcards*. A wildcard is a character that can be substituted for a pattern based selection, giving you more flexibility with searches. You can use wildcards in every command for more flexibility.
 
+* `*` the wildcard of wildcards, it’s used to represent **all single characters or any string**.
+* `?` used to represent **one** character 
+* `[]` used to represent any character **within the brackets**
+ 
+```bash
+$ cp *.jpg /home/pete/Pictures
+```
 
+This will copy all files with the .jpg extension in your current directory to the Pictures directory.
 
+A useful command is to use the `-r` flag, this will recursively copy the files and directories within a directory.
 
+Try to do a `cp` on a directory that contains a couple of files to your Documents directory. Didn’t work did it? Well that’s because you’ll need to copy over the files and directories inside as well with -r command.
+
+```bash
+$ cp -r Pumpkin/ /home/pete/Documents
+```
+
+One thing to note, if you copy a file over to a directory that has the same filename, the file will be **overwritten** with whatever you are copying over. This is no bueno if you have a file that you don’t want to get accidentally overwritten. You can use the `-i` flag (interactive) to prompt you before overwriting a file.
+
+```bash
+$ cp -i mycoolfile /home/pete/Pictures
+```
 
 
 
