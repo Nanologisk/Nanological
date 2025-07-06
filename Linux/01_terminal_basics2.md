@@ -92,6 +92,141 @@ $ cd ~
 $ cd -
 ```
 
+## 4. ls (List Directories)
+Now that we know how to move around the system, how do we figure out what is available to us? Right now it’s like we are moving around in the dark. Well, we can use the wonderful `ls` command to list directory contents. The `ls` command will list directories and files in the current directory by default, however you can specify which path you want to list the directories of.
+
+```bash
+$ ls
+$ ls /home/pete
+```
+
+ls is a quite useful tool, it also shows you detailed information about the files and directories you are looking at.
+
+Also note that not all files in a directory will be visible. Filenames that start with `.` are hidden, you can view them however with the `ls` command and pass the `-a` flag to it (a for all).
+
+```bash
+$ ls -a
+```
+
+There is also one more useful ls flag, `-l` for long, this shows a detailed list of files in a long format. This will show you detailed information, starting from the left: file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and file/directory name.
+
+```bash
+$ ls -l
+```
+
+```
+pete@icebox:~$ ls -l
+
+total 80
+
+drwxr-x— 7 pete penguingroup   4096 Nov 20 16:37 Desktop
+
+drwxr-x— 2 pete penguingroup   4096 Oct 19 10:46  Documents
+
+drwxr-x— 4 pete penguingroup   4096 Nov 20 09:30 Downloads
+
+drwxr-x— 2 pete penguingroup   4096 Oct  7 13:13   Music
+
+drwxr-x— 2 pete penguingroup   4096 Sep 21 14:02 Pictures
+
+drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Public
+
+drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Templates
+
+drwxr-x— 2 pete penguingroup   4096 Jul 27 12:41   Videos
+```
+
+Commands have things called flags (or arguments or options, whatever you want to call it) to add more functionality. See how we added `-a` and `-l`, well you can add them both together with `-la`. The order of the flags determines which order it goes in, most of the time this doesn’t really matter so you can also do `ls -al` and it would still work.
+
+```bash
+$ ls -la
+```
+
+Some more commands:
+
+* `ls -R`: recursively list directory contents
+* `ls -r`: reverse order while sorting
+* `ls -t`: sort by modification time, newest first
+
+
+## 5. touch
+Let’s learn how to make some files. A very simple way is to use the touch command. Touch allows you to the create new empty files.
+
+```bash
+$ touch mysuperduperfile
+And boom, new file!
+```
+
+Touch is also used to **change timestamps** on existing files and directories. Give it a try, do an `ls -l` on a file and note the timestamp, then touch that file and it will update the timestamp.
+
+## 6. file: to find the file type
+The filename didn’t conform to standard naming like with other operating systems like Windows. Normally you would expect a file called banana.jpeg and expect a JPEG picture file.
+
+In Linux, filenames aren’t required to represent the contents of the file. You can create a file called funny.gif that isn’t actually a GIF.
+
+To find out what kind of file a file is, you can use the file command. It will show you a description of the file’s contents.
+
+```bash
+$ file banana.jpg
+```
+
+## 7. cat
+How to read a file. A simple command to use is the cat command, short for **concatenate**, it not only displays file contents but it can combine multiple files and show you the output of them.
+
+```bash
+$ cat dogfile birdfile
+```
+
+It’s not great for viewing large files and it’s only meant for short content. There are many other tools that we use to view larger text files.
+
+
+## 8. less
+If you are viewing text files larger than a simple output, less is more. (There is actually a command called `more` that does something similar, so this is ironic.) The text is displayed **in a paged manner**, so you can navigate through a text file page by page.
+
+Once you’re in the less command, you can actually use other keyboard commands to navigate in the file.
+
+```bash
+$ less /home/pete/Documents/text1
+``` 
+Use the following command to navigate through less:
+
+* q - Used to quit out of less and go back to your shell.
+* Page up, Page down, Up and Down - Navigate using the arrow keys and page keys. 
+* g - Moves to beginning of the text file.
+* G - Moves to the end of the text file.
+* /search - You can search for specific text inside the text document. Prefacing the words you want to search with /
+* h - If you need a little help about how to use less while you’re in less, use help.
+
+
+## 9. history
+In your shell, there is a history of the commands that you previously entered, you can actually look through these commands. This is quite useful when you want to find and run a command you used previously without actually typing it again.
+
+```
+$ history
+```
+
+Want to run the same command did before, just hit the up arrow.
+
+Want to run the previous command without typing it again? Use `!!`. If you typed `cat file1` and want to run it again, you can actually just go `!!` and it will run the last command you ran.
+
+Another history shortcut is `ctrl-R`, this is the reverse search command, if you hit `ctrl-R` and you start typing parts of the command you want it will show you matches and you can just navigate through them by hitting the `ctrl-R` key again. Once you found the command you want to use again, just hit the `Enter` key.
+
+Our terminal is getting a little cluttered no? Let’s do a little cleanup, use the clear command to clear up your display.
+
+
+```
+$ clear
+```
+
+One of the most useful features in any command-line environment is **tab completion**. If you start typing the beginning of a command, file, directory, etc and hit the Tab key, it will autocomplete based on what it finds in the directory you are searching as long as you don’t have any other files that start with those letters. For example if you were trying to run the command chrome, you can type chr and press Tab and it will autocomplete chrome.
+
+
+
+
+
+
+
+
 
 
 
