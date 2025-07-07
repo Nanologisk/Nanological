@@ -247,6 +247,199 @@ One thing to note, if you copy a file over to a directory that has the same file
 $ cp -i mycoolfile /home/pete/Pictures
 ```
 
+## 11. mv (Move)
+Used for moving files and also **renaming** them. Quite similar to the `cp` command in terms of flags and functionality.
+
+You can **rename** files like this:
+```bash
+$ mv oldfile newfile
+```
+
+Or you can actually **move** a file to a different directory:
+
+```bash
+$ mv file2 /home/pete/Documents
+```
+And move more than one file:
+
+```bash
+$ mv file_1 file_2 /somedirectory
+```
+
+You can rename directories as well:
+
+```bash
+$ mv directory1 directory2
+```
+
+Like `cp`, if you `mv` a file or directory it will **overwrite** anything in the same directory. So you can use the `-i` flag to prompt you before overwriting anything.
+
+```bash
+mv -i directory1 directory2
+```
+
+Let’s say you did want to `mv` a file to overwrite the previous one. You can also make a **backup** of that file (`-b`) and it will just rename the old version with a `~`.
+
+```bash
+$ mv -b directory1 directory2
+```
+
+
+## 12. mkdir (Make Directory)
+We’re gonna need some directories to store all these files we’ve been working on. The `mkdir` command (Make Directory) is useful for that, it will create a directory if it doesn’t already exist. You can even make multiple directories at the same time.
+
+```bash
+$ mkdir books paintings
+```
+
+You can also create subdirectories at the same time with the `-p` (parent flag).
+
+```bash
+$ mkdir -p books/hemmingway/favorites
+```
+
+
+## 13. rm (Remove)
+Now I think we have too many files, let’s remove some files. To remove files you can use the `rm` command. The `rm` (remove) command is used to **delete** files and directories.
+
+```bash
+$ rm file1
+```
+
+**Take caution when using rm, there is no magical trash can that you can fish out removed files. Once they are gone, they are gone for good, so be careful.**
+
+Fortunately there are some safety measures put into place, so the average joe can’t just remove a bunch of important files. **Write-protected** files will prompt you for confirmation before deleting them. If a directory is write-protected it will also not be easily removed.
+
+Now if you don’t care about any of that, you can absolutely remove a bunch of files.
+
+```bash
+$ rm -f file1
+```
+
+`-f` or **force option** tells `rm` to remove all files, whether they are write protected or not, without prompting the user (as long as you have the appropriate permissions).
+
+```bash
+$ rm -i file
+```
+
+Adding the `-i` flag like many of the other commands, will give you a prompt on whether you want to actually remove the files or directories.
+
+```bash
+$ rm -r directory
+```
+
+You can’t just `rm` a **directory** by default, you’ll need to add the `-r` flag (recursive) to remove all the files and any subdirectories it may have.
+
+You can remove a directory with the `rmdir` command.
+
+```bash
+$ rmdir directory
+```
+
+
+## 14. find
+With all these files we have on the system it can get a little hectic trying to find a specific one. Well there’s a command we can use for that, find!
+
+```bash
+$ find /home -name puppies.jpg
+```
+
+With `find` you’ll have to specify:
+
+* The directory you’ll be searching it, 
+* What you’re searching for: name (`-name`) or type (`-type`) 
+* The name of that you´re searching for.
+
+In this case we are trying to find a file by the name (`-name`) of puppies.jpg.
+
+You can specify what type of file you are trying to find.
+
+```bash
+$ find /home -type d -name MyFolder
+```
+
+You can see that I set the type of file (`-type`) I’m trying to find as (`d`) for directory and I’m still searching by the name of MyFolder.
+
+One cool thing to note is that find doesn’t stop at the directory you are searching, it will look inside any subdirectories that directory may have as well.
+
+## 15. help
+Linux has some great built-in tools to help you how to use a command or check what flags are available for a command. One tool, help, is a built-in bash command that provides help for other bash commands (`echo`, `logout`, `pwd`, etc).
+
+```bash
+$ help echo
+```
+
+This will give you a description and the options you can use when you want to run echo. For other executable programs, it’s convention to have an option called `--help` or something similar.
+
+```bash
+$ echo --help
+```
+
+Not all developers who ship out executables will conform to this standard, but it’s probably your best shot to find some help on a program.
+
+
+## 16. man
+Gee I wish some of these programs had a manual so we can see some more information about them. Well luckily they do! Aptly named man pages, you can see the manuals for a command with the `man` command.
+
+```bash
+$ man ls
+```
+
+Man pages are manuals that are by default built into most Linux operating systems. They provide documentation about commands and other aspects of the system.
+
+
+## 17. whatis
+Whew, we’ve learned quite a bit of commands so far, if you are ever feeling doubtful about what a command does, you can use the `whatis` command. The `whatis` command provides a brief description of command line programs.
+
+```bash
+$ whatis cat
+```
+
+The description gets sourced from the manual page of each command. If you ran whatis cat, you’d see there is a small blurb with a short description.
+
+
+## 18. alias
+Sometimes typing commands can get really repetitive, or if you need to type a long command many times, it’s best to have an alias you can use for that. To create an alias for a command you simply specify an alias name and set it to the command.
+
+```bash
+$ alias foobar='ls -la'
+```
+
+Now instead of typing `ls -la`, you can type `foobar` and it will execute that command, pretty neat stuff. Keep in mind that this command **won't save your alias after reboot**, so you'll need to add a **permanent** alias in:
+
+```bash
+~/.bashrc
+```
+
+or similar files if you want to have it persist after reboot.
+
+You can **remove** aliases with the `unalias` command:
+
+```bash
+$ unalias foobar
+``` 
+
+
+## 19. exit
+To exit from the shell, you can use the `exit` command
+
+```bash
+$ exit
+```
+
+Or the `logout` command:
+
+```bash
+$ logout
+```
+
+Or if you are working out of a terminal GUI, you can just close the terminal.
+
+
+
+
+
+
 
 
 
