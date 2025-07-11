@@ -13,7 +13,7 @@ In terminal:
 
  and this changes the prompt to
  ```bash
- (ml_models) nan@pop-os:~@
+ (ml_models) user@system:~@
  ```
 
 ### 2. install packages as usual in termianl

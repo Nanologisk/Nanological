@@ -18,7 +18,7 @@ Neovim
 # inside NEovim:
 :echo stdpath("config")
 
-# it shows /home/nan/.config/nvim
+# it shows /home/user/.config/nvim
 ```
 
 Now create configuration file:
@@ -222,7 +222,7 @@ Inside NEovim, type
 
 
 
-
+---
 This tells Markdown “this code block is fenced with 4 backticks, so inside I can put 3 backticks literally.”
 
 
