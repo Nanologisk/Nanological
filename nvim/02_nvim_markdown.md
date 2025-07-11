@@ -219,9 +219,6 @@ Inside NEovim, type
 
 
 
-
-
-
 ---
 This tells Markdown “this code block is fenced with 4 backticks, so inside I can put 3 backticks literally.”
 
